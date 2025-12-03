@@ -1,0 +1,26 @@
+The command to view previous history is:
+
+$ history
+
+The shell stores history in ~/.bash_history:
+
+Location of the history file: HISTFILE
+Maximum number of lines in the history file: HISTFILESIZE
+Maximum number of lines of history list in the current session: HISTSIZE
+Below you can see a few examples of commands and outputs.
+
+$ echo $HISTFILE
+/home/jbond/.bash_history
+
+$ echo $HISTFILESIZE
+2000
+
+$ echo $HISTSIZE
+1000
+
+$ history | head -5
+40  cd RELEASE
+41  cd LFS430
+42  l
+43  cd V1.2
+44  l

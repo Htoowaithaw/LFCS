@@ -1,0 +1,12 @@
+Recalling, Editing Previous Commands
+With the arrow keys, you are essentially moving up and down your history list - most recently executed command first. !! (often pronounced as “bang-bang”) executes the previous command.
+
+CTRL-R is used to search through history. Hitting CTRL-R multiple times allows you to scan backwards through previous commands. Here is an example of CTRL-R:
+
+# This all happens on 1 line
+$ CTRL-R git
+(reverse-i-search)`git': git rm -f exported-variables.inc
+# Type Enter to execute or hit again:
+$ CTRL-R
+(reverse-i-search)`git': git ls-files
+# Type Enter to execute

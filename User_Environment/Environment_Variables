@@ -1,0 +1,64 @@
+By listing the environment variables with env, set or printenv, you can see that there are a large number. Many applications and programming languages use them and expect them, failing if they are not present. Linux uses them for many things, setting them up when the system starts. You can create and manipulate your own for your own purposes.
+
+You can associate a name with a variable value: HOME, HOST, PATH, etc.
+
+They can be listed in different formats with various commands:
+
+$ env
+$ export
+$ set
+
+All variables are prefixed with $ when referenced:
+
+$ echo PATH = $PATH
+
+Except when they are being defined:
+
+$ MYCOLOR=blue
+
+Note there can be no spaces around the equal (=) sign!
+
+You can see a few examples below.
+
+Command example 1:
+
+$ env | head -2
+
+Output 1:
+
+XDG_VTNR=1
+XDG_SESSION_ID=c259
+
+Command example 2:
+
+$ set | head -2
+
+Output 2:
+
+ABRT_DEBUG_LOG=/dev/null
+BASH=/usr/bin/bash
+
+Command example 3:
+
+$ export | head -2
+
+Output 3:
+
+declare -x BITS="64"
+declare -x CCACHE_COMPRESS="1"
+
+Command example 4:
+
+$ echo $PATH
+
+Output 4:
+
+/usr/local/texlive/2020/bin/x86_64-linux/:/sbin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin::/home/bjmoose/bin
+
+Command example 5:
+
+$ echo $HOME
+
+Output 5:
+
+/home/bjmoose

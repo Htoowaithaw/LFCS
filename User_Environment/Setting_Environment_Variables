@@ -1,0 +1,47 @@
+Setting Environment Variables
+You can list a specific variable. Sample command 1:
+
+$ echo $SHELL
+
+Output 1:
+
+/bin/bash
+
+Sample command 2:
+
+$ echo $EDITOR
+
+Output 2:
+
+/usr/bin/nano
+
+You can set a new variable value with:
+
+$ VARIABLE=value
+
+Sample command 3:
+
+$ export EDITOR=/usr/bin/nano
+$ echo $EDITOR
+
+Output 3:
+
+/usr/bin/nano
+
+You can add a new variable permanently:
+
+Edit ~/.bashrc to include VARIABLE=value
+Start a new shell or logout/login
+Sample command 4:
+
+$ echo $MYVAR
+
+$ vi .bashrc <-- added "export MYVAR=myvalue"
+$ echo $MYVAR
+
+$ source .bashrc
+$ echo $MYVAR
+
+Output 4:
+
+myvalue
