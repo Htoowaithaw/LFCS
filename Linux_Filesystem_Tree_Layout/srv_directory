@@ -1,0 +1,11 @@
+According to the Filesystem Hierarchy Standard (FHS):
+
+"/srv contains site-specific data which is served by this system.
+
+This main purpose of specifying this is so that users may find the location of the data files for particular service, and so that services which require a single tree for readonly data, writable data and scripts (such as cgi scripts) can be reasonably placed.
+
+The methodology used to name subdirectories of /srv is unspecified as there is currently no consensus on how this should be done. One method for structuring data under /srv is by protocol, e.g. ftp, rsync, www, and cvs."
+
+Some system administrators (and distributions) swear by the use of the /srv directory; others ignore it. There is often confusion about what is best to go in /var, as opposed to /srv.
+
+On Linux distributions such as Ubuntu and Red Hat-based ones, /srv is empty by default.

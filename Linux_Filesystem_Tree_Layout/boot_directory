@@ -1,0 +1,11 @@
+The /boot directory contains everything required for the boot process. The two files which are absolutely essential are:
+
+vmlinuz: The compressed Linux kernel
+initramfs: The initial RAM filesystem, which is mounted before the real root filesystem becomes available.
+The /boot directory stores data used before the kernel begins executing user-mode programs. It also includes two files used for information and debugging:
+
+config
+Used to configure the kernel compilation.
+System.map
+Kernel symbol table, used for debugging.
+The exact contents of /boot will vary by distribution and time; on one Ubuntu system we have:

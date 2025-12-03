@@ -1,0 +1,8 @@
+This directory contains special device files (also known as device nodes) which represent devices built into or connected to the system. These special files are essential for the system to function properly. Such device files represent character (byte-stream) and block I/O devices; network devices do not have device nodes in Linux, and are instead referenced by name, such as eth1 or wlan0.
+
+All modern Linux distributions use the udev system, which creates nodes in the /dev directory only as needed when devices are found. If you were to look at the /dev directory on an unmounted filesystem, you would find it empty.
+
+On ancient systems (or embedded devices), it can be created by MAKEDEV or mknod at install or at any other time, as needed.
+
+ ![alt text](w6mxi8dgarwb-device_node.png)
+ ![alt text](32f7j0xzdq5l-lsdev.png)

@@ -1,0 +1,22 @@
+This directory is designed for software packages that wish to keep all or most of their files in one isolated place, rather than scatter them all over the system in directories shared by other software. For example, if dolphy_app were the name of a package which resided under /opt, then all of its files should reside in directories under /opt/dolphy_app, including /opt/dolphy_app/bin for binaries and /opt/dolphy_app/man for any man pages.
+
+This can make both installing and uninstalling software relatively easy, as everything is in one convenient isolated location in a predictable and structured manner. It also makes it easier for system administrators to determine the nature of each file within a package.
+
+Note, however, if one uses packaging systems such as RPM and APT, as we shall discuss later, it is also easy to install and uninstall with a clear sense of file manifests and locations, without exhibiting such antisocial behavior.
+
+Command:
+
+$ ls -l /opt
+
+Output:
+
+total 20k
+drwxr-xr-x.  4 root root 4.OK Jul 26  2021 brother
+drwxr-xr-x.  4 root root 4.OK Sep  1  2019 google
+drwxr-xr-x   3 root root 4.OK Jul  7 08:03 rh
+drwxr-xr-x  12 root root 4.OK Jul  1 09:55 VirtualBox
+drwxr-xr-x. 30 root root 4.OK May 30 13:08 zoom
+
+In Linux, the /opt directory is often used by application providers with either proprietary software, or those who like to avoid complications of distribution variance. For example, on one system the packages are in /opt/brother, /opt/zoom and /opt/google and the latter has subdirectories for chrome and earth.
+
+The directories /opt/bin, /opt/doc, /opt/include, /opt/info, /opt/lib, and /opt/man are reserved for local system administrator use. Packages may provide files which are linked or copied to these reserved directories, but the packages must also be able to function without the programs being in these special directories. Most systems do not populate these directories.

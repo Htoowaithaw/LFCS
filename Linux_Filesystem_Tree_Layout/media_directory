@@ -1,0 +1,5 @@
+This directory was typically used to mount filesystems on removable media. These include CDs, DVDs, and USB drives, and even floppy disks.
+
+Linux systems mount such media dynamically upon insertion, and udev creates directories and then mounts the removable filesystems there, with names that are set with udev rules specified in configuration files. Upon unmounting and removal, the directories used as mount points disappear.
+
+If the media has more than one partition and filesystem, more than one entry will appear. On many Linux distributions, the file manager (such as Nautilus) will pop up when the media is mounted.

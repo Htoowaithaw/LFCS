@@ -1,0 +1,17 @@
+This directory contains machine-local configuration files and some startup scripts; there should be no executable binary programs. Files and directories which the FHS requires to be found in this directory include:
+
+csh.login, exports, fstab, ftpusers, gateways, gettydefs, group, host.conf, hosts.allow, hosts.deny, hosts.equiv, hosts.lpd, inetd.conf, inittab, issue, ld.so.conf, motd, mtab, mtools.conf, networks, passwd, printcap, profile, protocols, resolv.conf, rpc, securetty, services, shells, syslog.conf.
+
+Some of these files are pretty irrelevant today, such as mtools.conf, which is used by floppy disks. Some will not be found any more, no matter what the FHS says, due to software obsolescence.
+
+Distributions often add configuration files and directories to the /etc directory. For example, Red Hat adds a number of other directories, including /etc/sysconfig, where a number of system configuration files and directories live.
+
+Other important subdirectories include...
+/etc/skel
+Contains skeleton files used to populate newly created home directories.
+
+/etc/systemd
+Contains or points to configuration scripts for starting, stopping, and controlling system services when using systemd.
+
+/etc/init.d
+Contains startup and shutdown scripts for when using System V initialization.

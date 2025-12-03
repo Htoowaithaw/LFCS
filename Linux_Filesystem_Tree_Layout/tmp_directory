@@ -1,0 +1,12 @@
+This directory is used to store temporary files, and can be accessed by any user or application. However, the files on /tmp cannot be depended on to stay around for a long time:
+
+Some distributions run automated cron jobs, which remove any files older than 10 days typically, unless the purge scripts have been modified to exclude them.
+Some distributions remove the contents of /tmp with every reboot. This has been the Ubuntu policy.
+Some modern distributions utilize a virtual filesystem, using the /tmp directory only as a mount point for a ram disk using the tmpfs filesystem. This is the default policy on Fedora systems. When the system reboots, all information is thereby lost; /tmp is indeed temporary!
+In the last case, you must avoid creating large files on /tmp; they will actually occupy space in memory rather than disk, and it is easy to harm or crash the system through memory exhaustion. While the guideline is for applications to avoid putting large files in /tmp, there are plenty of applications that violate this policy and which make large temporary files in /tmp. Even if it is possible to put them somewhere else (perhaps by specifying an environment variable), many users are not aware of how to configure this and all users have access to /tmp.
+
+This policy can be canceled on systems using systemd, such as Fedora, by issuing the command:
+
+$ sudo systemctl mask tmp.mount
+
+followed by a system reboot.

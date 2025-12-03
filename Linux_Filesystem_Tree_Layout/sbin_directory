@@ -1,0 +1,13 @@
+This directory contains binaries essential for booting, restoring, recovering, and/or repairing in addition to those binaries in the /bin directory. They also must be able to mount other filesystems on /usr, /home and other locations if needed, once the root filesystem is known to be in good health during boot.
+
+The following programs should be included in this directory (if their subsystems are installed):
+
+fdisk, fsck, getty, halt, ifconfig, init, mkfs, mkswap, reboot, route, swapon, swapoff, update.
+
+Command:
+
+$ ls -l /sbin
+
+Output:
+
+rwxrwxrwx 1 root root 8 Apr 23 08:23 /sbin -> usr/sbin

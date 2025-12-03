@@ -1,0 +1,17 @@
+The /bin directory is very important because:
+
+It contains executable programs and scripts needed by both system administrators and unprivileged users, which are required when no other filesystems have yet been mounted; for example, when booting into single user or recovery mode.
+It may also contain executables which are used indirectly by scripts.
+It may not include any subdirectories.
+Required programs which must exist in the /bin/ directory include:
+
+cat, chgrp, chmod, chown, cp, date, dd, df, dmesg, echo, false, hostname, kill, ln, login, ls, mkdir, mknod, more, mount, mv, ps, pwd, rm, rmdir, sed, sh, stty, su, sync, true, umount and uname
+
+[ and test may be there as well, and optionally, it may include: csh, ed, tar, cpio, gunzip, zcat, netstat and ping.
+
+Command binaries that are deemed not essential enough to merit a place in the /bin directory go in /usr/bin. Programs required only by non-root users are placed in this category.
+
+Some recent distributions have abandoned the strategy of separating /bin and /usr/bin (as well as /sbin and /usr/sbin) and just have one directory with symbolic links, thereby preserving a two directory view. They view the time-honored concept of enabling the possibility of placing /usr on a separate partition to be mounted after boot as obsolete.
+
+Recent distribution versions of RHEL, CentOS, Fedora, and Ubuntu have symbolically linked /bin and /usr/bin so they are actually the same.
+
