@@ -1,0 +1,41 @@
+Aliases permit custom definitions. Typing alias with no arguments gives the list of defined aliases. unalias gets rid of an alias.
+
+You can create customized commands by creating aliases:
+
+$ alias name=command
+
+Note that there are no spaces around the = (equal) sign.
+
+To make an alias persistent, you should edit ~/.bashrc.
+
+Using aliases is also an excellent way for modifying standard program behavior, as in the following command:
+
+$ alias rm='rm -i"
+
+You can use the following command to get rid of an alias:
+
+$ unalias name
+
+You can list all currently active aliases with this command:
+
+$ alias
+
+You can see some example commands below:
+
+$ alias l='ls -laF'
+
+$ alias dir='ls -latF'
+
+$ alias rm='rm -i'
+
+$ alias mv='mv -i'
+
+$ alias cp='cp -ipdv'
+
+$ alias df='df -T'
+
+$ alias gitstat='git status -uno'
+
+$ alias diffside='diff --side-by-side --ignore-all-space'
+
+$ alias scapt='gnome-screenshot -i -w'

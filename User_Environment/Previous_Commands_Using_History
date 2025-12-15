@@ -1,0 +1,29 @@
+All history substitutions start with !.
+
+To start a history substitution: !
+To refer to the last argument in a line: !$
+To refer to the n-th command line: !n
+To refer to the most recent command starting with !string
+Thus, in the following command:
+
+$ ls -l /bin /etc /var
+
+!$ refers to /var which is the last argument in the line above.
+
+You can see a few examples below:
+
+$ history
+1 echo $SHELL
+2 echo $HOME
+3 echo $PS1
+4 ls-a
+5 ls -l /etc/passwd
+6 sleep 1000
+7 history
+
+$ !1    # Execute command #1 above
+echo $SHELL
+/bin/bash
+
+$ !sl   # Execute command beginning with "sl"
+sleep 1000

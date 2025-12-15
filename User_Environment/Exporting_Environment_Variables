@@ -1,0 +1,22 @@
+By default, variables created within a script are only available to the current shell: child processes (sub-shells) will not have access to the content of this variable. In order for variables to be visible to child processes, they need to be exported using the export command. Exporting a variable can be done in one step:
+
+$ export VAR=value
+
+or in two steps:
+
+$ VAR=value ; export VAR
+
+Keep in mind that the child process is allowed to modify exported variables, but the change in this case will not propagate back to the parent shell since exported variables are not shared, but only copied.
+
+$ export VERSION=$(uname -r)
+
+$ export
+
+Output:
+
+declare -x BITS="64"
+declare -x CCACHE_COMPRESS="1"
+declare -x CCACHE_DIR="/mp/.ccache"
+...
+declare -x VERSION="4.0.3"
+...
