@@ -1,0 +1,37 @@
+Attributes of a User Account
+Each user on the system has a corresponding line in the /etc/passwd file that describes their basic account attributes. We will talk about passwords, as well as this file later in the course. The following are considered attributes of a user account:
+
+User name
+User password
+User identification number (UID)
+Group identification number (GID)
+Comment or GECOS information
+Home directory
+Login shell
+From /etc/passwd:
+
+....
+beav:x:1000:1000:Theodore Cleaver:/home/beav:/bin/bash
+warden:x:1001:1001:Ward Cleaver:/home/warden:/bin/bash
+dobie:x:1002:1002:Dobie Gillis:/home/dobie:/bin/bash
+
+User name
+This is the unique name assigned to each user.
+
+User password
+This is the password assigned to each user.
+
+User identification number (UID)
+This is a unique number assigned to the user account. The UID is used by the system for a variety of purposes, including a determination of user privileges and activity tracking.
+
+Group identification number (GID)
+This indicates the primary, principal, or default group of the user.
+
+Comment or GECOS information
+A defined method to use the comment field for contact information (full name, email, office, contact number). Do not worry about what GECOS means, it is a very old term.
+
+Home directory
+For most users, this is a unique directory that offers a working area for the user. Normally, this directory is owned by the user, and except for root, will be found on the system somewhere under /home.
+
+Login shell
+Normally, this is a shell program such as /bin/bash or /bin/csh. Sometimes, however, an alternative program is referenced here for special cases. In general, this field will accept any executable.

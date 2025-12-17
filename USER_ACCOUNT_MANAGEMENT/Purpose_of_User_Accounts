@@ -1,0 +1,7 @@
+Linux systems provide a multi-user environment which permits people and processes to have separate simultaneous working environments.
+
+One special user account is for the root user, who is able to do anything on the system. To avoid making costly mistakes, and for security reasons, the root account should only be used when absolutely necessary.
+
+Normal user accounts are for people who will work on the system. Some user accounts (like the daemon account) exist for the purpose of allowing processes to run as a user other than root.
+
+We will also have a discussion of group management where subsets of the users on the system can share files, privileges, etc., according to common interests.

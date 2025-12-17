@@ -1,0 +1,12 @@
+When you login to Linux, /etc/profile is always read and evaluated. Next, the following files are searched for in this order:
+
+~/.bash_profile - login shells configuration
+~/.bash_login - login initialization
+~/.profile - overrides /etc/profile
+After finding the first file it comes to, the Linux login shell will evaluate that one startup file and ignore all the rest.
+
+While this may sound redundant, various Linux distributions tend to use different startup files.
+
+Every time you create a sub-shell, but aren’t logging in, only ~/.bashrc is read and evaluated. While it is not read and evaluated with a login shell, most distributions and users will call ~/.bashrc from within one of the three user-owned startup files; so, in reality, ~/.bashrc is used for login shells.
+
+Thus the vast majority of your customizations should go into ~/.bashrc.

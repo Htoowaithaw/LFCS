@@ -1,0 +1,20 @@
+The convention most Linux distributions have used is that any account with a UID less than 1000 is considered special and belongs to the system; normal user accounts start at 1000. The actual value is defined as UID_MIN and is defined in /etc/login.defs.
+
+Historically, Red Hat-derived distributions used UID_MIN=500, not 1000, but beginning with RHEL 7, the more common value of 1000 was adopted.
+
+If a UID is not specified when using useradd, the system will incrementally assign use IDs starting at UID_MIN.
+
+Additionally, each user gets a Primary Group ID which by default is the same number as the UID. These are sometimes called User Private Groups (UPG).
+
+/etc/passwd file contains one record (one line) for each user, each of which is a colon ( : ) separated list of fields:
+
+username: user’s unique name
+password: either the hashed password (if /etc/shadow is not used) or a place holder (”x” when /etc/shadow is used)
+UID: user identification number
+GID: primary group identification number for the user
+comment: comment area, usually the user’s real name
+home: directory pathname for the user’s home directory
+shell: absolutely qualified name of the shell to invoke at login
+It is bad practice to edit /etc/passwd, /etc/group or /etc/shadow directly; use appropriate utilities such as usermod, or for advanced users - the slightly safer tools vipw/vigr.
+
+

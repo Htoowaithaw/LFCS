@@ -1,0 +1,13 @@
+The root user can delete user accounts with userdel:
+
+$ sudo userdel rjsquirrel
+
+All references to the user rjsquirrel will be erased from /etc/passwd, /etc/shadow, and /etc/group. While this removes the account, it does not delete the home directory (usually /home/rjsquirrel) in case the account may be re-established later. If the -r option is given to userdel, the home directory will also be obliterated. However, all other files on the system owned by the removed user will remain.
+
+usermod can be used to change characteristics of a user account such as group memberships, home directory, login name, password, default shell, user id, etc. Usage is pretty straightforward. Note that usermod will take care of any modifications to files in the /etc directory as necessary.
+
+The command:
+
+$ sudo usermod -L bjmoose
+
+locks the account for bjmoose so they cannot login.

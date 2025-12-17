@@ -1,0 +1,17 @@
+useradd allows for default operation with the following command:
+
+$ sudo useradd bjmoose
+
+causes the following steps to execute:
+
+The next available UID greater than UID_MIN (specified in /etc/login.defs) by default is assigned as bjmoose’s UID
+A group called bjmoose with a GID=UID is also created and assigned as bjmoose’s primary group
+A home directory /home/bjmoose is created and owned by bjmoose
+bjmoose’s login shell will be /bin/bash
+The contents of /etc/skel is copied to /home/bjmoose. By default, /etc/skel includes startup files for bash and for the X Window system
+An entry of !! is placed in the password field of the /etc/shadow file for bjmoose’s entry, thus requiring the administrator to assign a password for the account to be usable.
+The defaults can easily be overruled by using options to useradd as in:
+
+$ sudo useradd -s /bin/csh -m -k /etc/skel -c "Bullwinkle J Moose" bjmoose
+
+where explicit non-default values have been given for some of the user attributes.

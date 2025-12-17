@@ -1,0 +1,10 @@
+Every time a new shell (either a command window or a script that is run) begins executing, there are files included that contain elements employed to ensure proper functioning. This may include:
+
+Defining relevant environment variables that are used by many programs and scripts (including $PATH)
+Defining aliases that are used as shorthand to specify commands and options
+Defining functions that can be used in subsequent scripts
+There are usually system-wide global initializing files found in /etc that are used by all users before individualized files are used.
+
+The files in the user home directory override global settings.
+
+Exactly which files are used and in what order depends on the context as we will explain.

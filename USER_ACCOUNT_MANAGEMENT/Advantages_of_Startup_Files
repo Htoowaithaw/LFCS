@@ -1,0 +1,14 @@
+Without the startup (initialization) file processing, each time a command or program is run there may be a lot of setup work to ensure proper functioning.
+
+Many programs evaluate certain environment variables are set when they begin to execute, and then make use of them to control functioning.
+
+For example, any program which needs to modify text files interactively will see how EDITOR is set, perhaps to vim, emacs, or nano (whichever editor the user prefers to use).
+
+To summarize, some of the advantages of using startup files are:
+
+Customizing the user's prompt
+Setting the user's terminal type
+Setting command line shortcuts and aliases
+Setting the default text editor
+Etc.
+We will see examples of the above in the section on environment variables.

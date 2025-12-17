@@ -1,0 +1,22 @@
+Linux ships with some locked accounts which means they can run programs, but can never login to the system and have no valid password associated with them. For example /etc/passwd has entries like:
+
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+The nologin shell returns the following if a locked user tries to login to the system:
+
+This account is currently not available.
+
+or whatever message may be stored in /etc/nologin.txt. Such locked accounts are created for special purposes, either by system services or applications; if you scan /etc/passwd for users with the nologin shell you can see who they are on your system. It is also possible to lock the account of a particular user as in the following command:
+
+$ sudo usermod -L bjmoose
+
+which means the account stays on the system but logging in is impossible. Unlocking can be done with the -U option. A customary practice is to lock a user’s account whenever they leave the organization or is on an extended leave of absence. Another way to lock an account is to use chage to change the expiration date of an account, as in the following command:
+
+$ sudo chage -E 2001-09-11 rjsquirrel
+
+The actual date is irrelevant as long as it is in the past.
+
+Locked accounts have no valid password:
+
+Usually represented by "!!" in /etc/shadow
