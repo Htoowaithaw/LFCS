@@ -1,0 +1,15 @@
+root has access to everything and can do everything; this is a very powerful account.
+
+sudo allows regular user accounts to have root privileges on a temporary basis. sudo can be configured to allow only certain accounts to have this ability and for certain accounts to only have elevated privileges for certain commands. sudo configuration is done in /etc/sudoers and /etc/sudoers.d. See man sudo for more details.
+
+su (pronounced ess-you and means switch or substitute user) creates a sub-shell environment that allows the user elevated privileges until they exit that shell. All commands executed in that sub-shell are executed with the elevated privileges of the root user.
+
+Mistakes will be made! It is best to limit your exposure to big mistakes, like removing many important files, by not using a su sub-shell to execute commands that do not require elevated privileges.
+
+The root account should only be used for administrative purposes when absolutely necessary and never used as a regular account. Mistakes can be very costly, both for integrity and stability, and system security.
+
+By default, root logins through the network are generally prohibited for security reasons. One can permit Secure Shell logins using ssh, which is configured with /etc/ssh/sshd_config, and PAM (Pluggable Authentication Modules), through the pam_securetty.so module and the associated /etc/securetty file. Root login is permitted only from the devices listed in /etc/securetty.
+
+It is generally recommended that all root access be through su or sudo (causing an audit trail of all root access through sudo). Note some distributions (such as Ubuntu), by default actually prohibit logging in directly to the root account.
+
+PAM can also be used to restrict which users are allowed to su to root. It might also be worth it to configure auditd to log all commands executed as root.

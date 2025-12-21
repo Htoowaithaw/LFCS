@@ -1,0 +1,21 @@
+/etc/shadow contains one record (one line) for each user, as in:
+
+daemon:*:16141:0:99999:7:::
+.....
+beav:$6$iCZyCnBJH9rmq7P.$RYNm10Jg3wrhAtUnahBZ/mTMg.RzQE6iBXyqaXHvxxbK\
+   TYqj.d9wpoQFuRp7fPEE3hMK3W2gcIYhiXa9MIA9w1:16316:0:99999:7:::
+
+Each record contains fields separated by colons ( : ):
+
+username: unique user name
+password: the hashed (sha512) value of the password
+lastchange: days since Jan 1, 1970 that password was last changed
+mindays: minimum days before password can be changed
+maxdays: maximum days after which password must be changed
+warn: days before password expires that the user is warned
+grace: days after password expires that account is disabled
+expire: date that account is/will be disabled
+reserved: reserved field
+The username in each record must match exactly that found in /etc/passwd, and also must appear in the identical order. All dates are stored as the number of days since Jan. 1, 1970 (the epoch date).
+
+The password hash is the string $6$ followed by an eight character salt value, which is then followed by a $ and an 88 character (sha512) password hash.

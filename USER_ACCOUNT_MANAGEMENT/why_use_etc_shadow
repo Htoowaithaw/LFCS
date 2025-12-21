@@ -1,0 +1,7 @@
+The default permissions of /etc/passwd are 644 (-rw-r--r--); anyone can read the file. This is unfortunately necessary because system programs and user applications need to read the information contained in the file. These system programs do not run as the user root and, in any event, only root may change the file.
+
+Of particular concern are the hashed passwords themselves. If they appear in /etc/passwd, anyone may make a copy of the hashed passwords and then make use of utilities such as Crack and John the Ripper to guess the original cleartext passwords given the hashed password. This is a security risk!
+
+/etc/shadow has permission settings of 400 (-r--------), which means that only root can access this file. This makes it more difficult for someone to collect the hashed passwords.
+
+Unless there is a compelling good reason not to, you should use the /etc/shadow file.

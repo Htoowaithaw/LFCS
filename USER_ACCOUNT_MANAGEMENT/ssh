@@ -1,0 +1,33 @@
+One often needs to login through the network into a remote system, or carry out commands on a remote system, either with the same username or another. Or one needs to transfer files to and from a remote machine (using scp). In either case, one wants to do this securely, free from interception.
+
+SSH (Secure SHell) exists for this purpose. It uses encryption based on strong algorithms. Assuming the proper ssh packages are installed on a system, one needs no further setup to begin using ssh. To sign onto a remote system, you can use the following command:
+
+$ ssh farflung.com
+
+student@farflung.com's password: (type here)
+
+assuming there is a student account on farflung.com. To log in as a different user, you can use:
+
+$ ssh root@farflung.com
+$ ssh -l root farflung.com
+
+To copy files from one system to another, you can do the following:
+
+$ scp file.txt farflung.com:/tmp
+$ scp file.tex student@farflung.com/home/student
+$ scp -r some_dir farflung.com:/tmp/some_dir
+
+We have omitted the request for a password to save space.
+
+To run a command on multiple systems simultaneously, you can use the following command:
+
+$ for machines in node1 node2 node3
+  do
+      (ssh $machines some_command &)
+done
+
+You can use the pssh (Parallel SSH) utility to execute a command on multiple systems in one fell stroke as in:
+
+$ pssh -viH machine1 machine2 machine3 do_something
+
+You may need to read the man page for pssh to figure out all its options and how to deal with passwords.
